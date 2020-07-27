@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author erikssonherlo
  */
 public class AnalizadorADN {
-     String Analisis1, Analisis2, Coincidencias = "";
+      public String Patrones = "",Analisis1, Analisis2, Coincidencias = "";
     int tamaño1, tamaño2;
     int entrar;
     int aux=0;
@@ -20,14 +20,8 @@ public class AnalizadorADN {
         //Metodo Constructor
     }
 
-    public void Analizar() {
-        System.out.println("Ingrese la Primera Cadena de ADN a Analizar:");
-        Scanner A1 = new Scanner(System.in);
-        Analisis1 = A1.nextLine();
+    public void Analizar(String Analisis1, String Analisis2) {
         tamaño1 = Analisis1.length();
-        System.out.println("Ingrese la Segunda Cadena de ADN a Analizar:");
-        Scanner A2 = new Scanner(System.in);
-        Analisis2 = A2.nextLine();
         tamaño2 = Analisis2.length();
         if(tamaño1>=tamaño2){
             aux=1;
@@ -47,6 +41,7 @@ public class AnalizadorADN {
                 {
                   Coincidencias = Analisis1.substring(c, i);                  
                   System.out.println("Posible Patron: "+ Coincidencias);
+                  Patrones += Coincidencias +"\n";
                 }  
                 }
             }
@@ -62,6 +57,7 @@ public class AnalizadorADN {
                 {
                   Coincidencias = Analisis2.substring(c, i);                  
                   System.out.println("Posible Patron: "+ Coincidencias);
+                  Patrones += Coincidencias +"\n";
                 }  
                 }
             }
